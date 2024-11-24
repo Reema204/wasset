@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripthomepage.js"></script> 
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="Home Page.html">
+                    <img src="logo.png" alt="Waseet Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Beauty.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+        <button id="theme-toggle" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">Switch Theme</button>
+
+    </header>
+    
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home Page</a> &gt;
+    </nav>
+
+    <!-- Date Display Section -->
+    <div id="week-date" style="margin: 20px 0; text-align: center;"></div> <!-- Element to display the current week's date -->
+
+    <!-- Vision Section -->
+    <div class="vision-section">
+        <div class="vision-image">
+            <img src="vision.png" alt="Vision Image">
+        </div>
+        <div class="vision-text">
+            <h2>Our Vision</h2>
+            <p>"At Waseet, we strive to lead the e-commerce market by offering an innovative and user-friendly platform that meets the needs of both sellers and buyers. Our goal is to simplify commercial processes and deliver the best user experience."</p>
+        </div>
+    </div>
+
+    <!-- Offer Section -->
+    <div class="offers-container" id="offers-container">
+        <!-- Offer 1: Decorative Pillow -->
+        <div class="offer">
+            <img src="home9.webp" alt="Decorative Pillow" class="offer-img">
+            <h3>Decorative Pillow</h3>
+            <p>Modern and stylish pillow with geometric patterns. Perfect for adding a touch of art to your home.</p>
+            <p><del>50 $</del> <strong>40 $</strong></p>
+            <p><span style="color: red;">Discount: 20% off</span></p>
+            <button>View Details</button>
+        </div>
+
+        <!-- Offer 2: Sleek Smartphone -->
+        <div class="offer">
+            <img src="ele2.webp" alt="Sleek Smartphone" class="offer-img">
+            <h3>Sleek Smartphone</h3>
+            <p>Experience cutting-edge technology with this sleek and modern smartphone. A great balance of performance and style.</p>
+            <p><del>800 $</del> <strong>699 $</strong></p>
+            <p><span style="color: red;">Discount: 12% off</span></p>
+            <button>View Details</button>
+        </div>
+
+        <!-- Offer 3: Ultra HD Smart TV -->
+        <div class="offer">
+            <img src="ele6.webp" alt="Ultra HD Smart TV" class="offer-img">
+            <h3>Ultra HD Smart TV</h3>
+            <p>Enjoy a cinematic experience in your home with this 4K Ultra HD Smart TV, perfect for streaming and gaming.</p>
+            <p><del>1,200 $</del> <strong>999 $</strong></p>
+            <p><span style="color: red;">Discount: 17% off</span></p>
+            <button>View Details</button>
+        </div>
+
+        <!-- Offer 4: Elegant Perfume -->
+        <div class="offer">
+            <img src="beauty4.webp" alt="Elegant Perfume" class="offer-img">
+            <h3>Elegant Perfume</h3>
+            <p>Luxurious perfume with a blend of exotic ingredients. Perfect for a night out or special occasion.</p>
+            <p><del>100 $</del> <strong>85 $</strong></p>
+            <p><span style="color: red;">Discount: 15% off</span></p>
+            <button>View Details</button>
+        </div>
+    </div>
+    <div style="text-align: center; margin: 20px;">
+        <button id="load-more-btn">Load More Offers</button>
+    </div>
+
+    <!-- Category Section -->
+    <div class="category-section">
+        <h2 class="section-title">Categories</h2>
+        <div class="category-container">
+            <div class="category-box">
+                <div class="circle-container">
+                    <img src="Electronic.png" alt="Electronics" class="circle-image">
+                </div>
+                <div class="box-title">
+                    <h3>Electronics</h3>
+                    <a href="electronics.html" class="category-button">View Electronics</a>
+                </div>
+            </div>
+            <div class="category-box">
+                <div class="circle-container">
+                    <img src="makeup.png" alt="Beauty" class="circle-image">
+                </div>
+                <div class="box-title">
+                    <h3>Beauty</h3>
+                    <a href="beauty.html" class="category-button">View Beauty</a>
+                </div>
+            </div>
+            <div class="category-box">
+                <div class="circle-container">
+                    <img src="sofa.png" alt="Home" class="circle-image">
+                </div>
+                <div class="box-title">
+                    <h3>Home</h3>
+                    <a href="home.html" class="category-button">View Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+        <h2>Reviews</h2>
+        <div class="reviews-container">
+            <div class="review">
+                <img src="man.png" alt="User Ahmad" class="review-img">
+                <h3>Ahmad Alrashid</h3>
+                <p>"Waseet offers an easy-to-use platform. I found all the products I needed in just a few clicks!"</p>
+                <div class="rating">
+                    ★★★★★
+                </div>
+            </div>
+            <div class="review">
+                <img src="man 2.png" alt="User Khalid" class="review-img">
+                <h3>Khalid Mansour</h3>
+                <p>"Great customer service and fast delivery. Waseet is now my go-to online marketplace."</p>
+                <div class="rating">
+                    ★★★★☆
+                </div>
+            </div>
+            <div class="review">
+                <img src="woman.png" alt="User Sara" class="review-img">
+                <h3>Sara Al-Mutairi</h3>
+                <p>"The product variety on Waseet is impressive! I managed to find unique items at great prices."</p>
+                <div class="rating">
+                    ★★★★★
+                </div>
+            </div>
+            <div class="review">
+                <img src="woman 2.png" alt="User Laila" class="review-img">
+                <h3>Laila Al-Harbi</h3>
+                <p>"Shopping on Waseet has been a great experience. The interface is simple, and checkout is fast!"</p>
+                <div class="rating">
+                    ★★★★☆
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
+  
+

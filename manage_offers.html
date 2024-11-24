@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Offers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Waseet Logo" class="logo-img">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User’s Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Beauty.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home</a> &gt;
+        <a href="Seller.html">Seller</a> &gt;
+        <span>Manage Offers</span>
+    </nav>
+
+    <!-- Manage Offers Page -->
+    <section class="manage-offers-container">
+        <h1>Manage Offers</h1>
+        <div class="manage-offers-section">
+            <div class="offers-list-add-offer">
+                <!-- Offer List Section -->
+                <div class="offer-list-box">
+                    <h2>Offer List</h2>
+                    <div class="offer-item">
+                        <img src="home9.webp" alt="Decorative Pillow">
+                        <label for="offer1">Decorative Pillow</label>
+                        <input type="checkbox" id="offer1" name="offer1">
+                    </div>
+                    <div class="offer-item">
+                        <img src="ele2.webp" alt="Ultra HD Smart TV">
+                        <label for="offer2">Ultra HD Smart TV</label>
+                        <input type="checkbox" id="offer2" name="offer2">
+                    </div>
+                    <div class="offer-item">
+                        <img src="ele6.webp" alt="Sleek Smartphone">
+                        <label for="offer3">Sleek Smartphone</label>
+                        <input type="checkbox" id="offer3" name="offer3">
+                    </div>
+                    <div class="offer-item">
+                        <img src="beauty4.webp" alt="Elegant Perfume">
+                        <label for="offer4">Elegant Perfume</label>
+                        <input type="checkbox" id="offer4" name="offer4">
+                    </div>
+                    <button class="delete-btn">Delete Selected Offers</button>
+                </div>
+
+                <!-- Add Offer Section -->
+                <div class="add-offer-box">
+                    <h2>Add Offer</h2>
+                    <form class="add-offer-form">
+                        <label for="offerName">Offer Name</label>
+                        <input type="text" id="offerName" name="offerName" required>
+
+                        <label for="offerDescription">Offer Description</label>
+                        <textarea id="offerDescription" name="offerDescription" rows="4" required></textarea>
+
+                        <label for="photo">Photo</label>
+                        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize offers array
+            let offers = []; // Array to manage offers dynamically
+
+            // Offer list and delete functionality
+            const deleteButton = document.querySelector('.delete-btn');
+            const offerListBox = document.querySelector('.offer-list-box');
+            const offerCheckboxes = document.querySelectorAll('.offer-item input[type="checkbox"]');
+
+            deleteButton.addEventListener('click', () => {
+                const selectedOffers = Array.from(offerCheckboxes).filter(checkbox => checkbox.checked);
+
+                if (selectedOffers.length === 0) {
+                    alert('Please select at least one offer');
+                    return;
+                }
+
+                if (confirm('Are you sure you want to delete the selected offers?')) {
+                    selectedOffers.forEach(checkbox => {
+                        const offerItem = checkbox.closest('.offer-item');
+                        const offerIndex = offers.findIndex(offer => offer.id === checkbox.id);
+                        offers.splice(offerIndex, 1); // Update the offers array
+                        offerItem.remove(); // Remove the offer item from the DOM
+                    });
+                }
+            });
+
+            // Add offer form functionality
+            const addOfferForm = document.querySelector('.add-offer-form');
+
+            addOfferForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const offerName = document.getElementById('offerName').value.trim();
+                const offerDescription = document.getElementById('offerDescription').value.trim();
+                const photoInput = document.getElementById('photo').files[0];
+
+                // Check for empty fields
+                if (!offerName || !offerDescription || !photoInput) {
+                    alert('Please fill out all fields');
+                    return;
+                }
+
+                // Validate offer name (should not start with a number)
+                if (/^\d/.test(offerName)) {
+                    alert('Offer name cannot start with a number');
+                    return;
+                }
+
+                // Validate image file type
+                const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+                if (!validImageTypes.includes(photoInput.type)) {
+                    alert('Please upload a valid image file (JPG or PNG)');
+                    return;
+                }
+
+                // Use FileReader to display image
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const newOfferId = `offer${offers.length + 1}`; // Generate a unique ID
+                    const newOfferItem = document.createElement('div');
+                    newOfferItem.classList.add('offer-item');
+                    newOfferItem.innerHTML = `
+                        <img src="${reader.result}" alt="${offerName}">
+                        <label for="${newOfferId}">${offerName}</label>
+                        <input type="checkbox" id="${newOfferId}" name="${newOfferId}">
+                    `;
+
+                    // Add new offer to the DOM
+                    offerListBox.appendChild(newOfferItem);
+
+                    // Add new offer to the offers array
+                    offers.push({ id: newOfferId, name: offerName, description: offerDescription });
+
+                    alert(`Offer "${offerName}" added successfully`);
+                    addOfferForm.reset(); // Clear the form fields
+                };
+
+                reader.readAsDataURL(photoInput);
+            });
+        });
+    </script>
+
+</body>
+</html>

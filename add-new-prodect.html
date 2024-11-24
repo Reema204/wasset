@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Product</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="addnewprodectscript.js"></script>
+
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Waseet Logo" class="logo-img">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Beauty.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home</a> &gt;
+        <a href="Seller.html">Seller</a> &gt;
+        <span>Add a New Product</span>
+    </nav>
+
+    <!-- Add New Product Form with Box -->
+    <section class="add-product-container">
+        <h1>Add a New Product</h1>
+        <div class="form-box">
+            <form class="add-product-form">
+                <label for="productName">Name of Product:</label>
+                <input type="text" id="productName" name="productName" required>
+
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                <label for="regularPrice">Regular Price:</label>
+                <input type="number" id="regularPrice" name="regularPrice" required>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+
+                <label for="salePrice">Sale Price:</label>
+                <input type="number" id="salePrice" name="salePrice">
+
+                <label for="category">Category:</label>
+                <div class="category-buttons">
+                    <button type="button" class="category-btn">Home</button>
+                    <button type="button" class="category-btn">Electronics</button>
+                    <button type="button" class="category-btn">Beauty</button>
+                </div>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="6" required></textarea>
+
+                <div class="form-buttons">
+                    <button type="submit">Add Product</button>
+                    <button type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+</body>
+</html>

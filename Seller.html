@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .offers-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+            border: 1px solid #ccc;
+            min-height: 430px;
+        }
+        .offer {
+            display: inline-block;
+            width: 250px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 0 0 auto;
+        }
+        .offer-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .breadcrumbs {
+            margin: 20px;
+        }
+        .breadcrumbs a {
+            color: #138f99;
+            text-decoration: none;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding-bottom: 40px;
+        }
+        .button-container a {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #138f99;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        .button-container a:hover {
+            background-color: #00a5a5;
+        }
+        footer {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Waseet Logo" class="logo-img">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Beauty.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home</a> &gt;
+        <span>Seller</span>
+    </nav>
+
+    <!-- Products Section -->
+    <div class="offers-container" id="offers-container">
+        <!-- Offers will be dynamically added here -->
+    </div>
+
+    <!-- Button to Add Product or Edit Offers -->
+    <div class="button-container">
+        <a href="manage_offers.html">Make or Delete Offers</a>
+        <a href="add-new-prodect.html">Add Product</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const offersContainer = document.getElementById('offers-container');
+    const storedProducts = JSON.parse(localStorage.getItem('sellerProducts')) || [];
+
+    if (storedProducts.length === 0) {
+        offersContainer.innerHTML = '<p>No products available. Please add new products.</p>';
+    } else {
+        storedProducts.forEach(product => {
+            const offerElement = document.createElement('div');
+            offerElement.classList.add('offer');
+
+            offerElement.innerHTML = `
+         <img src="${product.photo}" alt="${product.name}" class="offer-img">
+                <h3>${product.name}</h3>
+                <p>Quantity: ${product.quantity}</p>
+                <p>Price: <strong>$${product.regularPrice.toFixed(2)}</strong></p>
+                ${product.salePrice ? `<p>Sale Price: <strong>$${product.salePrice.toFixed(2)}</strong></p>` : ''}
+                <p>${product.description}</p>
+                <button>Edit</button>
+            `;
+
+            offersContainer.appendChild(offerElement);
+        });
+    }
+});
+
+    </script>
+</body>
+</html>
+
+
+

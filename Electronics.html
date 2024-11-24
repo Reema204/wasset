@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="Home Page.html">
+                    <img src="logo.png" alt="Waseet Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Electronics.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home Page</a> &gt;
+        <span>Electronics</span>
+    </nav>
+
+    <!-- Category Tabs Section -->
+    <div class="category-tabs">
+        <a href="beauty.html" class="tab-button">Beauty</a>
+        <a href="electronics.html" class="tab-button active">Electronics</a>
+        <a href="home.html" class="tab-button">Home</a>
+    </div>
+
+    <!-- Electronics Category Page -->
+    <section class="category">
+        <h1>Electronics</h1>
+        <div class="sorting">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <optgroup label="Alphabetical">
+                    <option value="name-asc">A-Z</option>
+                    <option value="name-desc">Z-A</option>
+                </optgroup>
+                <optgroup label="Price">
+                    <option value="price-asc">Low to High</option>
+                    <option value="price-desc">High to Low</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="product-grid" class="product-grid">
+            <div class="product-item" data-name="Smartphone" data-price="499.99">
+                <img src="ele6.webp" alt="Smartphone">
+                <h2>Smartphone</h2>
+                <p>$499.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Smart TV" data-price="199.99">
+                <img src="ele2.webp" alt="Smart TV">
+                <h2>Smart TV</h2>
+                <p>$199.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Gaming Console" data-price="299.99">
+                <img src="ele4.webp" alt="Gaming Console">
+                <h2>Gaming Console</h2>
+                <p>$299.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Camera" data-price="99.99">
+                <img src="ele5.webp" alt="Camera">
+                <h2>Camera</h2>
+                <p>$99.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Wireless Headphones" data-price="149.99">
+                <img src="ele3.webp" alt="Wireless Headphones">
+                <h2>Wireless Headphones</h2>
+                <p>$149.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Tablet" data-price="799.99">
+                <img src="ele1.webp" alt="Tablet">
+                <h2>Tablet</h2>
+                <p>$799.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Laptop" data-price="249.99">
+                <img src="ele7.webp" alt="Laptop">
+                <h2>Laptop</h2>
+                <p>$249.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Wireless Speaker" data-price="129.99">
+                <img src="ele8.webp" alt="Wireless Speaker">
+                <h2>Wireless Speaker</h2>
+                <p>$129.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+        </div>
+    </section>
+
+    <!-- Button to view cart centered -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button id="view-cart-button">My Cart</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="categoryscript.js"></script>
+</body>
+</html>

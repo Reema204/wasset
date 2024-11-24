@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 80%; 
+            margin: 20px auto;
+            gap: 2rem; 
+        }
+    
+        .cart-items {
+            flex: 2;
+            background-color: #fff;
+            padding: 2rem; 
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .cart-item img {
+            width: 8rem; 
+            height: 8rem;
+            margin-right: 1.5rem;
+            border-radius: 0.5rem;
+        }
+    
+        .cart-item-details h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+    
+        .cart-item-details p {
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+    
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+    
+        .quantity-control button {
+            background-color: #0dbcc2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+    
+        .quantity-control button:hover {
+            background-color: #0a97a3;
+        }
+    
+        .remove-button {
+            background-color: #f05454;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 1rem;
+        }
+    
+        .remove-button:hover {
+            background-color: #d84343;
+        }
+    
+        .checkout-section {
+            width: 100%; 
+            max-width: 22rem; 
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            align-self: flex-start;
+        }
+    
+        .checkout-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #0dbcc2;
+        }
+    
+        .checkout-section input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+        }
+    
+        .checkout-section .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1.5rem;
+        }
+    
+        .checkout-section .button-container button {
+            padding: 0.75rem 1.5rem;
+        }
+    
+        .clear-cart-btn,
+        .checkout-btn {
+            padding: 5rem 1.5rem;
+            background-color: #0dbcc2;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+    
+        .clear-cart-btn:hover,
+        .checkout-btn:hover {
+            background-color: #0a97a3;
+        }
+    
+        @media (max-width: 768px) {
+            .cart-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+    
+            .checkout-section {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .quantity-control button {
+                padding: 0.4rem 0.8rem;
+            }
+    
+            .clear-cart-btn,
+            .checkout-btn {
+                padding: 5rem 1rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Waseet Logo" class="logo-img">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Beauty.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home Page</a> &gt; 
+        <a href="User's Page.html">User's Page</a> &gt;
+        <span class="current">Cart Page</span>
+    </nav>
+    
+    <!-- Cart Container -->
+    <div class="cart-container">
+        <div id="cart-items" class="cart-items">
+            <h1>Your Cart</h1>
+            <!-- Example of a Cart Item -->
+            <div class="cart-item">
+                <img src="ele6.webp" alt="Sleek Body Lotion">
+                <div class="cart-item-details">
+                    <h3>Sleek Body Lotion</h3>
+                    <p>Price: $29.99</p>
+                    <div class="quantity-control">
+                        <button class="decrease-btn">-</button>
+                        <span class="quantity">2</span>
+                        <button class="increase-btn">+</button>
+                    </div>
+                </div>
+                <button class="remove-button">Remove</button>
+            </div>
+            <!-- Add more cart items as needed -->
+        </div>
+
+        <div class="checkout-section">
+            <h2>Checkout</h2>
+            <form>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" placeholder="Enter your full name">
+                
+                <label for="shipping-address">Shipping Address:</label>
+                <input type="text" id="shipping-address" placeholder="Street, City, State, ZIP">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                
+                <h3>Payment Information</h3>
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+                
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY">
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="3-digit code">
+                
+                <button type="submit">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
+
+
+
+

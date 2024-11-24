@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Evaluation Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="prodectevaltionscript.js"></script>
+
+    <style>
+   .dropdown-menu {
+            width: 60%;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+h1,h2{
+    margin: 40px;
+}
+        .offers-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        .offer {
+            width: 200px;
+            text-align: center;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .offer:hover {
+            transform: scale(1.05);
+        }
+
+        .offer-img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            margin-top: 10px;
+            color: #f39c12;
+        }
+
+        /* Breadcrumb styling */
+        .breadcrumbs {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumbs a {
+            color: #0dbcc2;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumbs span {
+            margin-right: 10px;
+            color: #7f8c8d;
+        }
+
+        .dropdown-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: 100px;
+        }
+
+        /* Reviews section styling */
+        .reviews-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 20px;
+        }
+
+        .review {
+            width: 280px; /* Increased width for larger images */
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-img {
+            width: 70px; /* Increased size for larger images */
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .feedback {
+            width: 95%;
+            margin: 20px auto; /* Added margin to create space below */
+            display: block;
+            height: 200px; /* Increased height */
+        }
+        .dropdown-menu {
+    width: 1200px; /* Adjust the width of the dropdown if needed */
+}
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Waseet Logo" class="logo-img">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Beauty.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home</a> >
+        <a href="User's Page.html">User’s Page</a> >
+        <span>Product Evaluation</span>
+    </nav>
+
+    <h1 style="text-align: left;">Product Evaluation</h1>
+
+    <div class="dropdown-container">
+        <label for="order-dropdown">Select Previous Order:</label>
+        <select id="order-dropdown" class="dropdown-menu">
+            <option value="" disabled selected>Select an order...</option>
+            <option value="5678">Order #5678 - Ultra HD Smart TV</option>
+            <option value="9123">Order #9123 - Sleek Smartphone</option>
+            <option value="4567">Order #4567 - Elegant Perfume</option>
+            <option value="8910">Order #8910 - Decorative Pillow</option>
+        </select>
+    </div>
+
+    <h2 style="text-align: left;">Product Selection</h2>
+
+    <div class="offers-container">
+        <div class="offer">
+            <img src="home9.webp" alt="Decorative Pillow" class="offer-img">
+            <h3>Decorative Pillow</h3>
+            <div class="rating">
+                ★★★★★
+            </div>
+        </div>
+
+        <div class="offer">
+            <img src="ele6.webp" alt="Sleek Smartphone" class="offer-img">
+            <h3>Sleek Smartphone</h3>
+            <div class="rating">
+                ★★★★☆
+            </div>
+        </div>
+
+        <div class="offer">
+            <img src="ele2.webp" alt="Ultra HD Smart TV" class="offer-img">
+            <h3>Ultra HD Smart TV</h3>
+            <div class="rating">
+                ★★★★☆
+            </div>
+        </div>
+
+        <div class="offer">
+            <img src="beauty4.webp" alt="Elegant Perfume" class="offer-img">
+            <h3>Elegant Perfume</h3>
+            <div class="rating">
+                ★★★★★
+            </div>
+        </div>
+    </div>
+
+    <!-- Rate and Feedback Section -->
+    <h2 style="text-align: left; margin-top: 30px;">Rate and Provide Feedback</h2>
+    <div class="rating-options" style="text-align: left; margin-left: 20px;">
+        <label>
+            <input type="radio" name="rating" value="1"> ★
+        </label>
+        <label>
+            <input type="radio" name="rating" value="2"> ★★
+        </label>
+        <label>
+            <input type="radio" name="rating" value="3"> ★★★
+        </label>
+        <label>
+            <input type="radio" name="rating" value="4"> ★★★★
+        </label>
+        <label>
+            <input type="radio" name="rating" value="5"> ★★★★★
+        </label>
+    </div>
+    <textarea class="feedback" rows="10" placeholder="Enter your feedback here"></textarea>
+
+    <div class="button-container">
+        <button type="button" id="submit-btn">Submit</button>
+        <button type="button">Cancel</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+   
+
+</body>
+</html>
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Waseet Logo" class="logo-img">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+    
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="Category Page.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumbs">
+    <a href="Home Page.html">Home Page</a> &gt;
+    <a href="User's Page.html">User's Page</a> &gt;
+    <span class="current"> Order Page</span> 
+</div>
+
+    <main>
+        <h1>Order History</h1>
+        <!-- Adding class "order-history" to the table -->
+        <table class="order-history">
+            <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>Time of Purchase</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>19</td><td>3:00am & 9-10-2024</td><td>230</td></tr>
+                <tr><td>20</td><td>5:32am & 11-10-2024</td><td>100</td></tr>
+                <tr><td>21</td><td>10:55am & 12-10-2024</td><td>87</td></tr>
+                <tr><td>22</td><td>12:28pm & 18-10-2024</td><td>90</td></tr>
+                <tr><td>23</td><td>7:43pm & 18-10-2024</td><td>49</td></tr>
+            </tbody>
+        </table>
+        
+        <!-- Adding class "pagination" for styling -->
+        <div class="pagination">
+            <a href="#">Previous</a> 1 <a href="#">2</a> <a href="#">3</a> <a href="#">Next</a>
+        </div>
+
+        <!-- Adding class "order-details" to the section -->
+        <section class="order-details">
+    <h2>Order Details</h2>
+    <p><strong>Order Number:</strong> [22]</p>
+    <p><strong>Time of Purchase:</strong> 12:28pm & 18-10-2024</p>
+    <p><strong>Items Purchased:</strong></p>
+    <ul>
+        <li>Item number: #301 – Quantity: 1 – Price:50$</li>
+        <li>Item number:#759 – Quantity: 1 – Price: 40$</li>
+    </ul>
+    <p class="total-amount"><strong>Total Amount:</strong> 90$</p>
+    <div class="order-actions">
+        <button>Add Order</button>
+        <button>Edit Order</button>
+    </div>
+</section>
+
+    </main>
+
+     <!-- Footer Section -->
+     <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="facebook-icon.png"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="twitter-icon.png"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="instagram-icon.png"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+</body>
+</html>

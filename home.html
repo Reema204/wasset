@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="Home Page.html">
+                    <img src="logo.png" alt="Waseet Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-links">
+                <a href="User's Page.html">User’s Page</a>
+                <a href="Seller.html">Seller</a>
+                <a href="home.html">Category</a>
+                <a href="Cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="Home Page.html">Home Page</a> &gt;
+        <span>Home</span>
+    </nav>
+
+    <!-- Category Tabs Section -->
+    <div class="category-tabs">
+        <a href="beauty.html" class="tab-button">Beauty</a>
+        <a href="electronics.html" class="tab-button">Electronics</a>
+        <a href="home.html" class="tab-button active">Home</a>
+    </div>
+
+    <!-- Home Category Page -->
+    <section class="category">
+        <h1>Home</h1>
+        <div class="sorting">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <optgroup label="Alphabetical">
+                    <option value="name-asc">A-Z</option>
+                    <option value="name-desc">Z-A</option>
+                </optgroup>
+                <optgroup label="Price">
+                    <option value="price-asc">Low to High</option>
+                    <option value="price-desc">High to Low</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="product-grid" class="product-grid">
+            <div class="product-item" data-name="Modern Lamp" data-price="129.99">
+                <img src="home1.webp" alt="Modern Lamp">
+                <h2>Modern Lamp</h2>
+                <p>$129.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Vase" data-price="49.99">
+                <img src="home2.webp" alt="Vase">
+                <h2>Vase</h2>
+                <p>$49.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Bookshelf" data-price="599.99">
+                <img src="home3.webp" alt="Bookshelf">
+                <h2>Bookshelf</h2>
+                <p>$599.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Coffee Table" data-price="199.99">
+                <img src="home4.webp" alt="Coffee Table">
+                <h2>Coffee Table</h2>
+                <p>$199.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Lamp" data-price="149.99">
+                <img src="home5.webp" alt="Lamp">
+                <h2>Lamp</h2>
+                <p>$149.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Wall Clock" data-price="89.99">
+                <img src="home7.webp" alt="Wall Clock">
+                <h2>Wall Clock</h2>
+                <p>$89.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Armchair" data-price="799.99">
+                <img src="home8.webp" alt="Armchair">
+                <h2>Armchair</h2>
+                <p>$799.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+            <div class="product-item" data-name="Decorative Pillow" data-price="39.99">
+                <img src="home9.webp" alt="Decorative Pillow">
+                <h2>Decorative Pillow</h2>
+                <p>$39.99</p>
+                <div class="quantity-control">
+                    <button class="decrease-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase-btn">+</button>
+                </div>
+                <input type="checkbox" class="add-to-cart-checkbox">
+            </div>
+        </div>
+    </section>
+
+    <!-- Button to view cart centered -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button id="view-cart-button">My Cart</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waseet. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:support@waseet.com">support@waseet.com</a> | Phone: +123456789</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="homescript.js"></script>
+</body>
+</html>
+
+
+
